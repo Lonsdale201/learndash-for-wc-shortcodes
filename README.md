@@ -40,7 +40,7 @@ onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" foo
 
 Sorrend:
 
-Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét. Minden elem alapvetően egymás alatt van.
+Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét shortcode segítségével, azaz nem számít, milyen sorrendben írod be a paramétereket. Minden elem alapvetően egymás alatt van.
 
 * Kiemelt kép (+ benne a badge)
 * Termék név

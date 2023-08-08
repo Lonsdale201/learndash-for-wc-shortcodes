@@ -40,9 +40,8 @@ onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" foo
 
 Sorrend:
 
-Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét. 
+Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét. Minden elem alapvetően egymás alatt van.
 
-* Minden elem alapvetően egymás alatt van.
 * Kiemelt kép (+ benne a badge)
 * Termék név
 * Stock
@@ -54,3 +53,12 @@ Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét.
 
 > [!IMPORTANT]
 > Variálható termékek esetében a kosárhoz adás gomb (Opciók választása) szöveget jelenít meg, kattintásra pedig átviszi a felhasználót a termék adatlapra!
+
+CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek köszönhetően az order-el módosíthatod a sorrendet.
+
+CLASSOK:
+
+* `wc-ld-wrapper`
+*  `wc-ld-image-wrapper`
+*  `wc-ld-badge`
+

@@ -1,17 +1,25 @@
 # learndash-for-wc-shortcodes
 Apró kiegészítő a Learndash és WooCommerce-hez
 
-### Bevezető
+## Bevezető
 
 A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-el, tehát vásárlást követően a hozzáférést beállíthatod, azonban a termék direkt megjelenítése a kurzus oldalon nehézkes.
 
 Ez az apró Shortcode alapú paraméterezhető bővítmény egy exrta lehetőséget biztos ahhoz, hogy összekösd a terméket és a kurzust, amit a kurzus single oldalán megjeleníthstz, így a látogató a kurzust a kosárhoz adhatja 
 anélkül, hogy külön elnavigáljon a termék oldalra.
 
+Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van neked is hasonlóra, használd egészséggel.
+
+**Tesztelve:**
+
+PHP 8.2
+WooCommerce: 7.9.0
+LearnDash: 4.7.0.2
+
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)
 
-**Shortcode paraméterek:**
+### Shortcode paraméterek:
 
 `[ld_wc_product_name]`
 

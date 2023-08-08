@@ -8,7 +8,7 @@ A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-e
 Ez az apró Shortcode alapú paraméterezhető bővítmény egy exrta lehetőséget biztos ahhoz, hogy összekösd a terméket és a kurzust, amit a kurzus single oldalán megjeleníthstz, így a látogató a kurzust a kosárhoz adhatja 
 anélkül, hogy külön elnavigáljon a termék oldalra.
 
-> [!FIGYELEM]
+> [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)
 
 **Shortcode paraméterek:**
@@ -52,5 +52,5 @@ Separator
 Add to cart / succes / acces text
 Footer
 
-> [!FIGYELEM]
+> [!IMPORTANT]
 > Variálható termékek esetében a kosárhoz adás gomb (Opciók választása) szöveget jelenít meg, kattintásra pedig átviszi a felhasználót a termék adatlapra!

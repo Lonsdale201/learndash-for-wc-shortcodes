@@ -87,7 +87,9 @@ function ld_wc_display_product_name($atts) {
             $output .= get_the_post_thumbnail($product_id, 'full');
         } else if (!empty($atts['fallbackimg'])) {
             // There is no featured image, but a fallback image URL is provided
-            $output .= '<img src="' . $atts['fallbackimg'] . '" alt="' . $product_post->post_title . '">';
+            $fallback_img_url = esc_url($atts['fallbackimg']);
+            $output .= '<img src="' . $fallback_img_url . '" alt="' . esc_attr($product_post->post_title) . '">';
+        
         }
 
         // If the product is on sale and the badge attribute is not empty, display the badge
@@ -102,7 +104,7 @@ function ld_wc_display_product_name($atts) {
                 $badge_text = str_replace('s%', $percentage . '%', $badge_text);
             }
 
-            $output .= '<div class="wc-ld-badge">' . $badge_text . '</div>';
+            $output .= '<div class="wc-ld-badge">' . esc_html($badge_text) . '</div>';
         }
         
         $output .= '</div>';  // Close the wc-ld-image-wrapper div
@@ -110,14 +112,14 @@ function ld_wc_display_product_name($atts) {
 
     // If the title attribute is set to true, get the product name
     if ($atts['title'] == 'true') {
-        $output .= '<h3 class="wc-ld-title">' . $product_post->post_title . '</h3>';
+        $output .= '<h3 class="wc-ld-title">' . esc_html($product_post->post_title) . '</h3>';
     }
 
      // If the 'stock' attribute is set to true, display the stock quantity
      if ($atts['stock'] == 'true') {
         $stock_quantity = $product->get_stock_quantity();
         if ($stock_quantity !== null && $stock_quantity > 0) {
-            $output .= '<span class="wc-ld-stock">' . $stock_quantity . ' készleten</span>';
+            $output .= '<span class="wc-ld-stock">' . esc_html($stock_quantity) . ' készleten</span>';
         }
     }
 
@@ -132,7 +134,7 @@ function ld_wc_display_product_name($atts) {
     }
 
     if (!empty($atts['customlabel'])) {
-        $output .= '<span class="wc-ld-custom-label">' . $atts['customlabel'] . '</span>';
+        $output .= '<span class="wc-ld-custom-label">' . esc_html($atts['customlabel']) . '</span>';
     }
 
     if ($atts['separator'] == 'true') {
@@ -147,14 +149,14 @@ function ld_wc_display_product_name($atts) {
         }
     } else {
         if ($is_variable) {
-            $output .= '<a href="' . get_permalink($product_id) . '" class="wc-ld-add-to-cart button alt wc-ld-variable-product-link"><span class="add-to-cart-text">' . 'Opciók választása' . '</span></a>'; 
+            $output .= '<a href="' . esc_url(get_permalink($product_id)) . '" class="wc-ld-add-to-cart button alt wc-ld-variable-product-link"><span class="add-to-cart-text">' . esc_html('Opciók választása') . '</span></a>';
         } else {
             // Add to cart button for simple products
             $output .= '<button class="wc-ld-add-to-cart button alt" data-product_id="' . $product_id . '" data-on-success-text="' . $atts['onsuccess-text'] . '"><span class="add-to-cart-text">' . $atts['addtocart'] . '</span></button>';
         }
     }
     if (!empty($atts['footer'])) {
-        $output .= '<span class="wc-ld-footer-text">' . $atts['footer'] . '</span>';
+        $output .= '<span class="wc-ld-footer-text">' . esc_html($atts['footer']) . '</span>';
     }
 
     // Close the wrapper div

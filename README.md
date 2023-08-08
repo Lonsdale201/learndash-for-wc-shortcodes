@@ -42,15 +42,15 @@ Sorrend:
 
 Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét. 
 
-Minden elem alapvetően egymás alatt van.
-Kiemelt kép (+ benne a badge)
-Termék név
-Stock
-Ár
-Custom label
-Separator
-Add to cart / succes / acces text
-Footer
+* Minden elem alapvetően egymás alatt van.
+* Kiemelt kép (+ benne a badge)
+* Termék név
+* Stock
+* Ár
+* Custom label
+* Separator
+* Add to cart / succes / acces text
+* Footer
 
 > [!IMPORTANT]
 > Variálható termékek esetében a kosárhoz adás gomb (Opciók választása) szöveget jelenít meg, kattintásra pedig átviszi a felhasználót a termék adatlapra!

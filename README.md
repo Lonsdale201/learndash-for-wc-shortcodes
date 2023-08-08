@@ -19,6 +19,16 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)
 
+### Tájékoztató
+
+Ez a plugin nem helyettesíti a hivatalos **LearnDash LMS - WooCommerce Integration** bővítményt. A **LearnDash for WooCommerce Shortcodes** egy kiegészítő. Ahhoz, hogy megjelenítsd a Shortcode tartalmát, a saját rendszeremet össze kell kötnöd. tehát a tanfolyam szerkesztőn belül még össze kell kötnöd a Kurzust a megvásárolandó WooCommerce termékkel.
+
+A Kurzusok listázásánál (backend) a bővítmény egy extra oszlopot ad hozzá, mely jelzi, mely terméket kapcsoltad rá.
+
+![image](https://github.com/Lonsdale201/learndash-for-wc-shortcodes/assets/23199033/fc07379e-0a89-400c-a5b5-cd8ab01bcd77)
+
+
+
 ### Shortcode paraméterek:
 
 `[ld_wc_product_name]`

@@ -38,4 +38,19 @@ Példa Shortcode:
 `[ld_wc_product_name  title="true" image="true" price="true" stock="false" shortdesc="false" separator="true" badge=" s% akció" addtocart="Add a kosárhoz" shortdesc="false" customlabel="Custom label" 
 onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" footer="30 napos pénzvisszafizetés"]`
 
+Sorrend:
 
+Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét. 
+
+Minden elem alapvetően egymás alatt van.
+Kiemelt kép (+ benne a badge)
+Termék név
+Stock
+Ár
+Custom label
+Separator
+Add to cart / succes / acces text
+Footer
+
+> [!FIGYELEM]
+> Variálható termékek esetében a kosárhoz adás gomb (Opciók választása) szöveget jelenít meg, kattintásra pedig átviszi a felhasználót a termék adatlapra!

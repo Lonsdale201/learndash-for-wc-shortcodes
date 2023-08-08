@@ -61,4 +61,13 @@ CLASSOK:
 * `wc-ld-wrapper`
 *  `wc-ld-image-wrapper`
 *  `wc-ld-badge`
+*  `(h3) wc-ld-title`
+*  `wc-ld-outofstock`
+*  `extraaccess`
+*  `wc-ld-shortdesc`
+*  `wc-ld-price`
+*  `wc-ld-custom-label`
+*  `wc-ld-separator`
+*  `wc-ld-already-have-access`
+*  `wc-ld-footer-text`
 

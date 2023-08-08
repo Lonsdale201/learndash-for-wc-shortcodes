@@ -5,7 +5,7 @@ Apró kiegészítő a Learndash és WooCommerce-hez
 
 A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-el, tehát vásárlást követően a hozzáférést beállíthatod, azonban a termék direkt megjelenítése a kurzus oldalon nehézkes.
 
-Ez az apró Shortcode alapú paraméterezhető bővítmény egy exrta lehetőséget biztos ahhoz, hogy összekösd a terméket és a kurzust, amit a kurzus single oldalán megjeleníthstz, így a látogató a kurzust a kosárhoz adhatja 
+Ez az apró Shortcode alapú paraméterezhető bővítmény egy exrta lehetőséget biztos ahhoz, hogy összekösd a terméket és a kurzust, amit a kurzus single oldalán megjeleníthetsz, így a látogató a kurzust a kosárhoz adhatja 
 anélkül, hogy külön elnavigáljon a termék oldalra.
 
 Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van neked is hasonlóra, használd egészséggel.

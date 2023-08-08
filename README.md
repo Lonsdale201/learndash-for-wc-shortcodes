@@ -33,6 +33,9 @@ Alapértelmezetten megjelenik a termék neve, és a kosárhoz adás gomb. Ha a t
 - **outofstock=""**   | Ha a termék már nem kapható, akkor megadhatsz egy egyedi szöveget. Ilyen esetben a Shortcode teljes tartalma eltűnik, és csak a paraméter szöveg jelenik meg. Alapértelmezett érték: **A kurzus már nem                           megvásárolható.**
 - **footer=""**  | Lábléc szöveg amely a kosárhoz adás gomb alatt jelenik meg. NIncs alapértelmezett érték, azaz ha nem definiálod semmi nem jelenik meg a "footer-ben".
   
+Példa Shortcode:
 
+`[ld_wc_product_name  title="true" image="true" price="true" stock="false" shortdesc="false" separator="true" badge=" s% akció" addtocart="Add a kosárhoz" shortdesc="false" customlabel="Custom label" 
+onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" footer="30 napos pénzvisszafizetés"]`
 
 

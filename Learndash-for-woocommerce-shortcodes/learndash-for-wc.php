@@ -59,6 +59,7 @@ class LD_For_WC {
 
     public function woocommerce_ajax_add_to_cart() {
         $nonce= $_POST['nonce'];
+       
 
         if ( ! wp_verify_nonce( $nonce, 'woocommerce-ajax_add_to_cart-nonce' ) ) {
             die( __( 'Security check', 'textdomain' ) );

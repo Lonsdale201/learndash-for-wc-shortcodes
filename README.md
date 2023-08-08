@@ -12,9 +12,9 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 
 **Tesztelve:**
 
-PHP 8.2
-WooCommerce: 7.9.0
-LearnDash: 4.7.0.2
+* PHP 8.2
+* WooCommerce: 7.9.0
+* LearnDash: 4.7.0.2
 
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)

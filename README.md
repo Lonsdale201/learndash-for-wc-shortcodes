@@ -21,7 +21,7 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 
 ### Tájékoztató
 
-Ez a plugin nem helyettesíti a hivatalos **LearnDash LMS - WooCommerce Integration** bővítményt. A **LearnDash for WooCommerce Shortcodes** egy kiegészítő. Ahhoz, hogy megjelenítsd a Shortcode tartalmát, a saját rendszeremet össze kell kötnöd. tehát a tanfolyam szerkesztőn belül még össze kell kötnöd a Kurzust a megvásárolandó WooCommerce termékkel.
+Ez a plugin nem helyettesíti a hivatalos **LearnDash LMS - WooCommerce Integration** bővítményt. A **LearnDash for WooCommerce Shortcodes** egy kiegészítő. Ahhoz, hogy megjelenítsd a Shortcode tartalmát, a saját rendszeremet össze kell kötnöd. tehát a tanfolyam szerkesztőn belül még rá kell kapcsolnod a Kurzust a megvásárolandó WooCommerce termékkel.
 
 A Kurzusok listázásánál (backend) a bővítmény egy extra oszlopot ad hozzá, mely jelzi, mely terméket kapcsoltad rá.
 

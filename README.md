@@ -76,7 +76,7 @@ Telepít, aktivál. Ha ez megvan, akkor lépj be abba a kurzusba, amihez szeretn
 A Shortcode, automatikusan tudja, hogy a felhasználó által megnyitott kurzus tanfolyam melyik, és megnézi, hogy van-e hozzákötve termék, ha talál egyezést, a rákapcsolt termék adatait fogja megjeleníteni. 
 **Ez a kis rendszer globálisra lett tervezve, ezért sem lehet, egyedi ID paraméter-t megadni!**
 
-Sorrend:
+#### Sorrend:
 
 Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét shortcode segítségével, azaz nem számít, milyen sorrendben írod be a paramétereket. Minden elem alapvetően egymás alatt van.
 
@@ -94,7 +94,7 @@ Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét sh
 
 CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek köszönhetően az order-el módosíthatod a sorrendet.
 
-CLASSOK:
+#### CLASSOK:
 
 * `wc-ld-wrapper`
 *  `wc-ld-image-wrapper`

@@ -21,6 +21,7 @@ function ld_wc_display_product_name($atts) {
         'fallbackimg' => '',
         'onsuccess-text' => "Termék a kosárban",
         'access-text' => '',
+        'access-link' => 'false',
         'footer' => '',
         'outofstock' => 'A kurzus már nem megvásárolható.'
     );
@@ -141,12 +142,19 @@ function ld_wc_display_product_name($atts) {
         $output .= '<div class="wc-ld-separator"></div>';
     }
     
-    // Check if the user has access to the course
-    if (ld_course_check_user_access($course_id, $user_id)) {
+     // Check if the user has access to the course
         // If the "access-text" attribute is defined
-        if (!empty($atts['access-text'])) {
-            $output .= '<div class="wc-ld-already-have-access">' . esc_html($atts['access-text']) . '</div>';
-        }
+        if (ld_course_check_user_access($course_id, $user_id)) {
+            if (!empty($atts['access-text'])) {
+                $output .= '<div class="wc-ld-already-have-access">';
+                if ($atts['access-link'] == 'true') {
+                    $course_link = get_permalink($course_id); // Get the course single page link
+                    $output .= '<a href="' . esc_url($course_link) . '">' . esc_html($atts['access-text']) . '</a>';
+                } else {
+                    $output .= esc_html($atts['access-text']);
+                }
+                $output .= '</div>';
+            }
     } else {
         if ($is_variable) {
             $output .= '<a href="' . esc_url(get_permalink($product_id)) . '" class="wc-ld-add-to-cart button alt wc-ld-variable-product-link"><span class="add-to-cart-text">' . esc_html('Opciók választása') . '</span></a>';
@@ -224,11 +232,8 @@ function ld_wc_only_one_course_in_cart( $passed, $product_id, $quantity ) {
         if ( WC()->cart->get_cart_contents_count() > 0 ) {
             // Cycle through each item in the cart
             foreach ( WC()->cart->get_cart() as $cart_item_key => $values ) {
-                // If the product being added to the cart matches a product already in the cart, do not add and display a message
                 if ( $product_id == $values['product_id'] ) {
-                    // Get the course name
-                    $course_name = !empty($courses) ? $courses[0]->post_title : 'Ismeretlen kurzus'; // Feltételezzük, hogy a $courses tömb első eleme a kurzus
-                    // Add the course name to the notice
+                    $course_name = !empty($courses) ? $courses[0]->post_title : 'Ismeretlen kurzus'; 
                     wc_add_notice(sprintf(__('Ebből a termékből ("%s") csak egyet adhatsz hozzá a kosaradhoz', 'woocommerce'), $course_name), 'error');
                     $passed = false;
                     break;

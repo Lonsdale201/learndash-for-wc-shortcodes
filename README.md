@@ -68,6 +68,14 @@ Példa Shortcode:
 `[ld_wc_product_name  title="true" image="true" price="true" stock="false" shortdesc="false" separator="true" badge=" s% akció" addtocart="Add a kosárhoz" shortdesc="false" customlabel="Custom label" 
 onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" footer="30 napos pénzvisszafizetés"]`
 
+
+### Használat
+
+Telepít, aktivál. Ha ez megvan, akkor lépj be abba a kurzusba, amihez szeretnél WooCommerce terméket hozzákötni. Belépést követően jobb oldal-t A **Kapcsolódó tartalom** alatt egy új opció jelenik meg: **WC Termék Kiválasztása** Itt add hozzá azt a terméket, aminek a megvásárlása szüksége a kurzushoz. Utolsó lépésként a shortcode-ot helyezd el, például a Tanfolyam Single oldalán (amit lehet Elementorral is szerkeszteni), ha hasznáslz elementor loop builder-t ott is használható.
+
+A Shortcode, automatikusan tudja, hogy a felhasználó által megnyitott kurzus tanfolyam melyik, és megnézi, hogy van-e hozzákötve termék, ha talál egyezést, a rákapcsolt termék adatait fogja megjeleníteni. 
+**Ez a kis rendszer globálisra lett tervezve, ezért sem lehet, egyedi ID paraméter-t megadni!**
+
 Sorrend:
 
 Nincs rá mód, hogy egyedileg állítsd a shortcode tartalmának sorrendjét shortcode segítségével, azaz nem számít, milyen sorrendben írod be a paramétereket. Minden elem alapvetően egymás alatt van.

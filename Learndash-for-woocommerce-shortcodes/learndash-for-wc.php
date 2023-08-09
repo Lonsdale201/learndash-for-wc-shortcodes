@@ -52,7 +52,7 @@ class LD_For_WC {
         // Enqueued script with localized data
         wp_enqueue_script('ld-wc-add-to-cart');
     
-        // Enqueue your custom CSS file
+        // Enqueue custom CSS file
         wp_enqueue_style('ld-wc-customcss', plugins_url('lc-dc-customcss.css', __FILE__));
     }
     
@@ -105,19 +105,19 @@ class LD_For_WC {
 
     public function add_meta_box() {
         add_meta_box(
-            'ld_for_wc_product_selector',       // Unique ID
-            'Select WooCommerce Product',       // Box title
-            array($this, 'display_meta_box'),   // Content callback, must be of type callable
-            'sfwd-courses',                     // Post type
-            'side'                              // The part of the page where the box should be shown
+            'ld_for_wc_product_selector',       
+            'WC Termék kiválasztása',           
+            array($this, 'display_meta_box'),  
+            'sfwd-courses',                     // cpt
+            'side'                              
         );
     }
 
     public function display_meta_box($post) {
-        // Add a nonce field for security
+        
         wp_nonce_field('ld_for_wc_save', 'ld_for_wc_nonce');
 
-        // Get all WooCommerce products
+      
         $args = array(
             'post_type' => 'product',
             'posts_per_page' => -1,
@@ -164,7 +164,7 @@ class LD_For_WC {
             return;
         }
 
-        // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+        
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return;
         }
@@ -185,14 +185,14 @@ class LD_For_WC {
         $new_columns = array();
         $i = 0;
         foreach ($columns as $key => $value) {
-            if ($i == 2) { // 3-as index a 4. pozícióhoz (mivel a tömb indexelése 0-val kezdődik)
+            if ($i == 2) { 
                 $new_columns['ld_for_wc_product'] = 'Hozzárendelt termék';
             }
             $new_columns[$key] = $value;
             $i++;
         }
     
-        // Ha az oszlopok száma kevesebb, mint 4, akkor adjuk hozzá a végére
+        
         if ($i <= 3) {
             $new_columns['ld_for_wc_product'] = 'WooCommerce Product';
         }

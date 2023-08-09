@@ -59,6 +59,7 @@ Alapértelmezetten megjelenik a termék neve, és a kosárhoz adás gomb. Ha a t
 - **fallbackimg=""**   | Ha a termékednek nincs kiemelt képe, de te engedélyezted azt, akkor megadhatsz url formájában egy másik képet. Ezt tartalékként fogja betölteni, és csak akkor, ha nincs érték amit kivehetne.
 - **onsuccess-text=""** | Amikor a kosárhoz adod a terméket *(mivel ajax alapú),* kell egy jelzés a felhasználó felé. Ez definiálás nélkül: **Termék a kosárban**, írd át ha mást szeretnél a gomb szövegének megadni.
 - **access-text=""**  | Ha szeretnéd akkor, megjeleníthetsz ebben a shortcode blokkban egy üzenetet, amely az add to cartot helyettesíi, egy jelzéssel, hogy már hozzáférsz a kurzushoz. Nincs alapértelmezett érték.
+- **access-link="false"**     | Ha a shortcode-ot egy loop ba rakod, pl Elementor Loop, akkor hasznos, ha az access szövegre kattintásával átlehet menni maga a tanfolyam oldalra. Alapértelmezetten false.
 - **outofstock=""**   | Ha a termék már nem kapható, akkor megadhatsz egy egyedi szöveget. Ilyen esetben a Shortcode teljes tartalma eltűnik, és csak a paraméter szöveg jelenik meg. Alapértelmezett érték: **A kurzus már nem                           megvásárolható.**
 - **footer=""**  | Lábléc szöveg amely a kosárhoz adás gomb alatt jelenik meg. NIncs alapértelmezett érték, azaz ha nem definiálod semmi nem jelenik meg a "footer-ben".
   

@@ -10,6 +10,7 @@ v1.1
 * Javítva lett - Undefined variable $user_id
 * Name Your price kompatibilitás - Mostantól ha a termék name Your price alapú, a variációs termékhez hasonlóan viselkedeik a kosárhoz adás gomb. (azaz átirányít a termék oldalra)
 * Mostantól az ár sem jelenik meg, ha a felhasználónak van már hozzáférése a kurzushoz.
+* Kompatibilitás ellenőrzés: LD 4.8.0
 
 ## Bevezető
 

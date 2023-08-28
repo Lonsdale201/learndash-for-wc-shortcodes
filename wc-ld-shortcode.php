@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function ld_wc_display_product_name($atts) {
     global $post;
+    $user_id = get_current_user_id();
+
 
     // Set default attributes
     $default_atts = array(
@@ -53,6 +55,11 @@ function ld_wc_display_product_name($atts) {
 
     // Check if the product is variable
     $is_variable = $product->is_type('variable');
+
+    $is_nyp = 'no';  // default value
+    if (function_exists('WC_Name_Your_Price')) {
+    $is_nyp = get_post_meta($product_id, '_nyp', true);
+    }
 
     // Check if the product is on sale
     $is_on_sale = $product->is_on_sale();
@@ -144,6 +151,7 @@ function ld_wc_display_product_name($atts) {
     
      // Check if the user has access to the course
         // If the "access-text" attribute is defined
+       // Check if the user has access to the course
         if (ld_course_check_user_access($course_id, $user_id)) {
             if (!empty($atts['access-text'])) {
                 $output .= '<div class="wc-ld-already-have-access">';
@@ -155,24 +163,25 @@ function ld_wc_display_product_name($atts) {
                 }
                 $output .= '</div>';
             }
-    } else {
-        if ($is_variable) {
-            $output .= '<a href="' . esc_url(get_permalink($product_id)) . '" class="wc-ld-add-to-cart button alt wc-ld-variable-product-link"><span class="add-to-cart-text">' . esc_html('Opciók választása') . '</span></a>';
-        } else {
-            // Add to cart button for simple products
-            $output .= '<button class="wc-ld-add-to-cart button alt" data-product_id="' . $product_id . '" data-on-success-text="' . $atts['onsuccess-text'] . '"><span class="add-to-cart-text">' . $atts['addtocart'] . '</span></button>';
+            } else {
+            if ($is_variable || ($is_nyp == 'yes')) {
+                $output .= '<a href="' . esc_url(get_permalink($product_id)) . '" class="wc-ld-add-to-cart button alt wc-ld-variable-product-link"><span class="add-to-cart-text">' . esc_html('Opciók választása') . '</span></a>';
+            } else {
+                // Add to cart button for simple products
+                $output .= '<button class="wc-ld-add-to-cart button alt" data-product_id="' . $product_id . '" data-on-success-text="' . $atts['onsuccess-text'] . '"><span class="add-to-cart-text">' . $atts['addtocart'] . '</span></button>';
+            }
         }
-    }
-    if (!empty($atts['footer'])) {
-        $output .= '<span class="wc-ld-footer-text">' . esc_html($atts['footer']) . '</span>';
-    }
 
-    // Close the wrapper div
-    $output .= '</div>';
+        if (!empty($atts['footer'])) {
+            $output .= '<span class="wc-ld-footer-text">' . esc_html($atts['footer']) . '</span>';
+        }
 
-   
-    return $output;
-}
+        // Close the wrapper div
+        $output .= '</div>';
+
+        return $output;
+
+        }
 add_shortcode('ld_wc_product_name', 'ld_wc_display_product_name');
 
 

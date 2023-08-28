@@ -1,6 +1,15 @@
 # learndash-for-wc-shortcodes
 Apró kiegészítő a Learndash és WooCommerce-hez
 
+
+## Changelog
+
+2023.08.28
+v1.1 
+
+* Javítva lett - Undefined variable $user_id
+* Name Your price kompatibilitás - Mostantól ha a termék name Your price alapú, a variációs termékhez hasonlóan viselkedeik a kosárhoz adás gomb. (azaz átirányít a termék oldalra)
+
 ## Bevezető
 
 A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-el, tehát vásárlást követően a hozzáférést beállíthatod, azonban a termék direkt megjelenítése a kurzus oldalon nehézkes.

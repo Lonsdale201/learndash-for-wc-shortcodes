@@ -3,7 +3,7 @@
 Plugin Name: LearnDash for WooCommerce Shortcodes
 Plugin URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 Description: Ez egy nem hiszem el, hogy senki nem gondolt erre kiegészítő a LearnDash / WooCommerce duóhoz.
-Version: 1.0-beta
+Version: 1.1
 Author: Soczó Kristóf
 Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 */

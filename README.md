@@ -34,8 +34,8 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 **Tesztelve:**
 
 * PHP 8.2
-* WooCommerce: 8.0
-* LearnDash: 4.7.0.2
+* WooCommerce: 8.0.2
+* LearnDash: 4.8
 
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)

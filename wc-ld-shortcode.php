@@ -136,10 +136,14 @@ function ld_wc_display_product_name($atts) {
         $output .= '<div class="wc-ld-shortdesc">' . $product->get_short_description() . '</div>';
     }
     // Display the product price if 'price' attribute is true
-    if ($atts['price'] == 'true') {
-        $price = $product->get_price_html();
-        $output .= '<div class="wc-ld-price">' . $price . '</div>';
+    // Check if the user does not have access to the course
+    if (!ld_course_check_user_access($course_id, $user_id)) {
+        if ($atts['price'] == 'true') {
+            $price = $product->get_price_html();
+            $output .= '<div class="wc-ld-price">' . $price . '</div>';
+        }
     }
+
 
     if (!empty($atts['customlabel'])) {
         $output .= '<span class="wc-ld-custom-label">' . esc_html($atts['customlabel']) . '</span>';

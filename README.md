@@ -145,6 +145,20 @@ classok:
 *  *learndash--menu-anygroup_enrolled* csak akkor jelenik meg a menüpont ha a felhasználónak van csoporttagsága (legalább egy)
 
 
+### Új tartalom hozzáadása az új kuruzsaim fiókom menüponthoz. 
+Példa kódok:
+
+```
+add_action('ld_course_list_after', function($user_id) {
+    // Itt írhatnak saját kódot, amely a kurzuslista után jelenik meg
+    echo '<p>Egyéni tartalom a felhasználó ID-je: ' . esc_html($user_id) . '</p>';
+});
+
+add_action('ld_course_list_after_menu_label', function($label, $user_id) {
+    echo '<p>Egyéni tartalom a ' . esc_html($label) . ' címke alatt.</p>';
+}, 10, 2);
+```
+
 
 ### Használat
 

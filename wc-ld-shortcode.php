@@ -3,7 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-
 function ld_wc_display_product_name($atts) {
     global $post;
     $user_id = get_current_user_id();

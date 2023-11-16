@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: LearnDash for WooCommerce Shortcodes
+Plugin Name: HelloWP | LearnDash for WooCommerce Extras
 Plugin URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
-Description: Ez egy nem hiszem el, hogy senki nem gondolt erre kiegészítő a LearnDash / WooCommerce duóhoz.
-Version: 1.1
+Description: Speciális kiegészítő ami további kombinációkat biztosít a Learndash és WooCommerce-hez.
+Version: 2.0-beta
 Author: Soczó Kristóf
 Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 */
@@ -20,19 +20,50 @@ class LD_For_WC {
         add_action('wp_enqueue_scripts', array($this, 'ld_wc_enqueue_scripts'));
         add_action('wp_ajax_woocommerce_ajax_add_to_cart', array($this, 'woocommerce_ajax_add_to_cart'));
         add_action('wp_ajax_nopriv_woocommerce_ajax_add_to_cart', array($this, 'woocommerce_ajax_add_to_cart'));
+        add_filter('plugin_action_links_' . plugin_basename(__FILE__), array($this, 'add_settings_link'));
 
         add_filter('manage_sfwd-courses_posts_columns', array($this, 'ld_for_wc_add_product_column'));
         add_action('manage_sfwd-courses_posts_custom_column', array($this, 'ld_for_wc_show_product_column'), 10, 2);
 
         add_action('admin_init', array($this, 'check_wc_status'));
 
+        // new visibility system
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-visibility-manager.php';
+        new LearnDash_Visibility_Manager();
+
+         // new menu visibility system
+         require_once plugin_dir_path(__FILE__) . 'includes/learndash-menu-visibility-manager.php';
+         new LearnDash_Menu_Visibility_Manager();
+
+        // new settings system
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-for-settings.php';
+        new LearnDash_for_Settings();
+
+        // new shortcodes
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-extra-shortcodes.php';
+        new LearnDash_extra_Shortcodes();
+
+        // new endpoint system
+        require_once plugin_dir_path(__FILE__) . 'includes/woocommerce-learndash-endpoint.php';
+        new WooCommerce_LearnDash_Endpoint();
+
+        // new thankyou page message
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-wc-thankyoupage.php';
+        new WooCommerce_LearnDash_ThankyouPage();
+
         // Include the shortcode file
         include plugin_dir_path(__FILE__) . 'wc-ld-shortcode.php';
     }
 
+    public function add_settings_link($links) {
+        $settings_link = '<a href="' . admin_url('admin.php?page=learndash-extras') . '">Beállítások</a>';
+        array_unshift($links, $settings_link);
+        return $links;
+    }
+
     public function ld_wc_enqueue_scripts() {
         // Register the script
-        wp_register_script('ld-wc-add-to-cart', plugins_url('ld-wc-add-to-cart.js', __FILE__), array('jquery'), '1.0', true);
+        wp_register_script('ld-wc-add-to-cart', plugins_url('assets/js/ld-wc-add-to-cart.js', __FILE__), array('jquery'), '1.0', true);
     
         // Create nonce
         $nonce = wp_create_nonce('woocommerce-ajax_add_to_cart-nonce');
@@ -53,7 +84,7 @@ class LD_For_WC {
         wp_enqueue_script('ld-wc-add-to-cart');
     
         // Enqueue custom CSS file
-        wp_enqueue_style('ld-wc-customcss', plugins_url('lc-dc-customcss.css', __FILE__));
+        wp_enqueue_style('ld-wc-customcss', plugins_url('assets/css/lc-dc-customcss.css', __FILE__));
     }
     
 
@@ -108,7 +139,7 @@ class LD_For_WC {
             'ld_for_wc_product_selector',       
             'WC Termék kiválasztása',           
             array($this, 'display_meta_box'),  
-            'sfwd-courses',                     // cpt
+            'sfwd-courses',                   
             'side'                              
         );
     }
@@ -154,12 +185,12 @@ class LD_For_WC {
     }
 
     public function save_meta_box($post_id) {
-        // Check if our nonce is set.
+        
         if (!isset($_POST['ld_for_wc_nonce'])) {
             return;
         }
 
-        // Verify that the nonce is valid.
+       
         if (!wp_verify_nonce($_POST['ld_for_wc_nonce'], 'ld_for_wc_save')) {
             return;
         }
@@ -248,5 +279,5 @@ function ld_for_wc_activation_check() {
 
 new LD_For_WC();
 register_activation_hook(__FILE__, 'ld_for_wc_activation_check');
-
+register_activation_hook(__FILE__, array('WooCommerce_LearnDash_Endpoint', 'flush_rewrite_rules_on_activation'));
 ?>

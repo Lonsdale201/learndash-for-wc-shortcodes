@@ -108,15 +108,15 @@ Kurzus single oldalon használható kódok és attributumok:
 
 **Példák:**
 
-`[ld_extra_lessons label="Leckék: " icon="<i class='fa fa-book'></i>"]`
-`[ld_extra_topics label="Témák: " icon="<i class='fa fa-book'></i>" empty="false"]`
-`[ld_extra_quiz label="Kvízek: " icon="<i class='fa fa-book'></i>" empty="true"]`
-`[ld_extra_reward_points label="Megszerezhető pontok: " icon="<i class='fa fa-book'></i>" empty="false"]`
-`[ld_extra_access_points label="Szükséges pontok: " icon="<i class='fa fa-trophy'></i>"]`
-`[ld_extra_access_type label="Hozzáférés típusa: " icon="<i class='fa fa-trophy'></i>"]`
-A kategória esetében az empty nem szükséges, ha nincs kategória nem jelenik meg a shortcode. Extra attributum: -> linkable , ha true, akkor kattintható lesz a kategória.
-`[ld_extra_course_category label="Kategória:" loggedin="true" enrolled="true" empty="true" linkable="false"]`
-`[ld_extra_status label="Kurzus státusz:" loggedin="true" enrolled="true" empty="true"]`
+- `[ld_extra_lessons label="Leckék: " icon="<i class='fa fa-book'></i>"]`
+- `[ld_extra_topics label="Témák: " icon="<i class='fa fa-book'></i>" empty="false"]`
+- `[ld_extra_quiz label="Kvízek: " icon="<i class='fa fa-book'></i>" empty="true"]`
+- `[ld_extra_reward_points label="Megszerezhető pontok: " icon="<i class='fa fa-book'></i>" empty="false"]`
+- `[ld_extra_access_points label="Szükséges pontok: " icon="<i class='fa fa-trophy'></i>"]`
+- `[ld_extra_access_type label="Hozzáférés típusa: " icon="<i class='fa fa-trophy'></i>"]`
+- A kategória esetében az empty nem szükséges, ha nincs kategória nem jelenik meg a shortcode. Extra attributum: -> linkable , ha true, akkor kattintható lesz a kategória.
+- `[ld_extra_course_category label="Kategória:" loggedin="true" enrolled="true" empty="true" linkable="false"]`
+- `[ld_extra_status label="Kurzus státusz:" loggedin="true" enrolled="true" empty="true"]`
 
 **Globális shortcodeok:**
 

@@ -121,9 +121,9 @@ Kurzus single oldalon használható kódok és attributumok:
 **Globális shortcodeok:**
 
 
-`[ld_extra_mypoints label="Az Ön pontjai: " empty="false"]`
-`[ld_extra_total_courses_owned label="Összes kurzusom: " empty="true"]`
-`[ld_extra_completed_courses_count label="Befejezett kurzusaim: " empty="true"]`
+- `[ld_extra_mypoints label="Az Ön pontjai: " empty="false"]`
+- `[ld_extra_total_courses_owned label="Összes kurzusom: " empty="true"]`
+- `[ld_extra_completed_courses_count label="Befejezett kurzusaim: " empty="true"]`
 
 ### Elementor Class Visibility
 

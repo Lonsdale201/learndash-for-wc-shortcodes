@@ -110,6 +110,8 @@ Classok:
 * *learndash--logged_in* csak akkor jelenik meg ha be vagy jelentkezve
 * *learndash--logged_out* csaj akkor jelenik meg, ha nem vagy bejelentkezve
 
+*Amelyik widgetre használni szeretnéd, a haladó fülön a Css Osztály mezőbe másold bele a megfelelő class-t.*
+
 ### Menu Visibility
 
 Az Elementorhoz hasonlóan előbb ezt is be kell kapcsolnod.

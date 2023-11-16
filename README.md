@@ -49,8 +49,8 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 **Tesztelve:**
 
 * PHP 8.2
-* WooCommerce: 8.0.2
-* LearnDash: 4.8
+* WooCommerce: 8.3
+* LearnDash: 4.9.1
 
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)
@@ -92,6 +92,58 @@ Példa Shortcode:
 
 `[ld_wc_product_name  title="true" image="true" price="true" stock="false" shortdesc="false" separator="true" badge=" s% akció" addtocart="Add a kosárhoz" shortdesc="false" customlabel="Custom label" 
 onsuccess-text="Már a kosárban van" access-text="A kurzushoz hozzáférsz" footer="30 napos pénzvisszafizetés"]`
+
+
+### Extra Shortcodeok
+Az új extra shortcode-okat két részre bontjuk:
+
+Kurzus single oldalon használható kódok és attributumok:
+
+* **Label** -> ez jelenik meg a tartalom előtt.
+* **Icon** -> ez szintén maga a tartalom , és ha van akkor a label előtt
+* **loggedin** -> true vagy false, alapértelmezetten false, ha megadod, hogy true, csak a bejelentkezett felhasználó láthatja
+* **enrolled** -> true vagy false, true esetében csak az látja az adott kurzus oldalán, aki enrollolta a kurzust.
+* **empty** -> ha az érték üres, vagy 0, és az empty false ra állítod, nem jelent meg semmit. Ha true, akkor is megjeleníti ha az érték üres, vagy nulla. (leckék esetében az empty paraméter nincs definiálva)
+
+
+**Példák:**
+
+`[ld_extra_lessons label="Leckék: " icon="<i class='fa fa-book'></i>"]`
+`[ld_extra_topics label="Témák: " icon="<i class='fa fa-book'></i>" empty="false"]`
+`[ld_extra_quiz label="Kvízek: " icon="<i class='fa fa-book'></i>" empty="true"]`
+`[ld_extra_reward_points label="Megszerezhető pontok: " icon="<i class='fa fa-book'></i>" empty="false"]`
+`[ld_extra_access_points label="Szükséges pontok: " icon="<i class='fa fa-trophy'></i>"]`
+`[ld_extra_access_type label="Hozzáférés típusa: " icon="<i class='fa fa-trophy'></i>"]`
+A kategória esetében az empty nem szükséges, ha nincs kategória nem jelenik meg a shortcode. Extra attributum: -> linkable , ha true, akkor kattintható lesz a kategória.
+`[ld_extra_course_category label="Kategória:" loggedin="true" enrolled="true" empty="true" linkable="false"]`
+`[ld_extra_status label="Kurzus státusz:" loggedin="true" enrolled="true" empty="true"]`
+
+**Globális shortcodeok:**
+
+
+`[ld_extra_mypoints label="Az Ön pontjai: " empty="false"]`
+`[ld_extra_total_courses_owned label="Összes kurzusom: " empty="true"]`
+`[ld_extra_completed_courses_count label="Befejezett kurzusaim: " empty="true"]`
+
+### Elementor Class Visibility
+
+A használatházo először a bővítmény beállításaiba be kell kapcsolni az **Enable Elementor Visibility** opciót.
+Ezek csak a kurzus single oldalán használhatóak!
+
+Classok: 
+* *learndash--enrolled* csak akkor jeleníti meg a widgetet ha az adott felhasználónak a kurzushoz van már hozzáférése
+* *learndash--logged_in* csak akkor jelenik meg ha be vagy jelentkezve
+* *learndash--logged_out* csaj akkor jelenik meg, ha nem vagy bejelentkezve
+
+### Menu Visibility
+
+Az Elementorhoz hasonlóan előbb ezt is be kell kapcsolnod.
+Bekapcsolást követően navigálj a Megjelenés - Menük majd a Mit lássunk fülön kapcsold be a CSS Osztályok megjelenítését.
+
+classok:
+* *learndash--menu-anyenrolled* akkor jeleik meg a menüpont ha a felhasználónak van bármilyen kurzusa
+*  *learndash--menu-anygroup_enrolled* csak akkor jelenik meg a menüpont ha a felhasználónak van csoporttagsága (legalább egy)
+
 
 
 ### Használat

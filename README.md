@@ -4,6 +4,20 @@ Apró kiegészítő a Learndash és WooCommerce-hez
 
 ## Changelog
 
+2023.11.16 
+V2.0-beta
+
+* ÚJ extra shortcodeok egyes részeit csak a single kurzus oldalon, egyes részeit pedig globálisan is használhatóak
+* ÚJ beállítások menüpont : WooCommerce / LearnDash Extras néven
+* ÚJ visibility funkció (láthatóság), elementor specifikus, és globális menü specifikus. Class megadással működik.
+* Új WooCommerce fiókom menüpont készítés a kurzusokhoz, és számos beállítás hozzá
+* ÚJ learndash statisztikai adatok az új wc végponthoz. (felhasználói saját adatai)
+* ÚJ extra instrukció megjelenítése ha kurzus terméket vásároltak, a WooCommerce thankyou page oldalon
+* TWEAK kód opatimalizálás, fájl struktúra
+* TWEAK a Plugin neve a 2.0 verziótól kezdődően: **LearnDash for WooCommerce Extras**
+* Két do_action hozzáadva az új végponthoz: add_action('ld_course_list_after', function($user_id) | add_action('ld_course_list_after_menu_label', function($label, $user_id)
+
+
 2023.08.28
 v1.1 
 

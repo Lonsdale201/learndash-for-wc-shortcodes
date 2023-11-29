@@ -179,6 +179,12 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 
 ## Changelog
 
+2023.11.29
+V2.0-beta2
+
+* FIX Flush rew javítás. Ritka esetben régiből újba való update esetében okozott hibát
+* Verzió számozás átállítva a beta stage állapotokra
+
 2023.11.16 
 V2.0-beta
 

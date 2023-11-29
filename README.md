@@ -23,7 +23,7 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 
 **Tesztelve:**
 
-* PHP 8.2
+* PHP 8.1
 * WooCommerce: 8.3
 * LearnDash: 4.9.1
 

@@ -104,6 +104,9 @@ Kurzus single oldalon használható kódok és attributumok:
 *(csak label attributumot adhatunk meg)*
 - `[ld_extra_product_price label="ár"]`
 
+Ez egy speciális shortcode, amit célszerű a loop-ban megadni, pl jetEngine kurzus listing, elementor stb. A bővítmény által biztosított másodlagos összekötés alapján megjeleníti a kurzushoz társított termék árát (tehát, nem a hivatalos összekötésből nézi az árat). Name your price kompatibilis.
+Label attributum használata opcionális
+
 ### Elementor Class Visibility
 
 A használatházo először a bővítmény beállításaiba be kell kapcsolni az **Enable Elementor Visibility** opciót.

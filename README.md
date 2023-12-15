@@ -100,6 +100,10 @@ Kurzus single oldalon használható kódok és attributumok:
 - `[ld_extra_total_courses_owned label="Összes kurzusom: " empty="true"]`
 - `[ld_extra_completed_courses_count label="Befejezett kurzusaim: " empty="true"]`
 
+**Kurzus Loop**
+*(csak label attributumot adhatunk meg)*
+- `[ld_extra_product_price label="ár"]`
+
 ### Elementor Class Visibility
 
 A használatházo először a bővítmény beállításaiba be kell kapcsolni az **Enable Elementor Visibility** opciót.
@@ -178,6 +182,11 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 *  `wc-ld-footer-text`
 
 ## Changelog
+
+2023.12.15
+V2.0-beta3
+
+* ÚJ shortcode: [ld_extra_product_price] használható a loop-ban. (pl jetengine listing grid stb), a Plugin által biztosított másodlagos WooCommerce termék összekötésből megjeleníti a bekötött Termék árát ami a Kurzus árával egyenlő
 
 2023.11.29
 V2.0-beta2

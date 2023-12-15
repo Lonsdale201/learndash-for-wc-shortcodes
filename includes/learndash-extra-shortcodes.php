@@ -71,36 +71,51 @@ class LearnDash_extra_Shortcodes {
 
     public function ld_extra_product_price_shortcode($atts = array()) {
         global $post;
-
-        // Ellenőrizzük, hogy a shortcode-ot LearnDash kurzuson belül használják-e
-        if (!is_singular('sfwd-courses') || empty($post->ID)) {
-            return '';
-        }
-
+    
         $attributes = shortcode_atts(
             array(
                 'label' => '',
             ),
             $atts
         );
-
-        // A kurzushoz társított termék ID-jének lekérése
+    
+        if (!is_singular('sfwd-courses') && !is_post_type_archive('sfwd-courses') || empty($post->ID)) {
+            return '';
+        }
+    
         $product_id = get_post_meta($post->ID, 'ld_for_wc_product', true);
         if (empty($product_id)) {
             return '';
         }
-
-        // A termék objektumának lekérése
+    
         $product = wc_get_product($product_id);
         if (!$product) {
-            return 'Hiba a termék lekérésekor';
+            return ''; 
         }
-
+    
+        $product_post_status = get_post_status($product_id);
+        if ($product_post_status !== 'publish') {
+            return ''; 
+        }
+    
+        if (!$product->is_in_stock()) {
+            return wc_get_stock_html($product); 
+        }
+    
+        $is_nyp = function_exists('WC_Name_Your_Price') && get_post_meta($product_id, '_nyp', true) === 'yes';
+        if ($is_nyp) {
+            $suggested_price_html = WC_Name_Your_Price_Helpers::get_suggested_price_html($product);
+            if ($suggested_price_html) {
+                return $suggested_price_html;
+            }
+        }
+    
         $price_output = $attributes['label'] ? $attributes['label'] . ' ' : '';
         $price_output .= wc_price($product->get_price());
-
         return $price_output;
     }
+    
+    
 
     public function ld_extra_topics_shortcode($atts = array()) {
         $attributes = shortcode_atts(

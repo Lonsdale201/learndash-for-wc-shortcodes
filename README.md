@@ -20,6 +20,7 @@ Ez a kiegészítő egy saját projekthez kellett. Amennyiben szükséged van nek
 
 ![image](https://github.com/Lonsdale201/learndash-for-wc-shortcodes/assets/23199033/53652489-78ca-47df-b6ba-15c5cb58ee11)
 
+Egyéb extra beállításokhoz navigálj a **WooCommerce -** **- LearnDash Extras** menöpontra
 
 **Tesztelve:**
 
@@ -185,6 +186,9 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 *  `wc-ld-footer-text`
 
 ## Changelog
+2024. 02.05
+
+* ÚJ Frissítő szerver bekötve
 
 2023.12.15
 V2.0-beta3

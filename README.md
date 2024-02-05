@@ -4,9 +4,7 @@ Apró kiegészítő a Learndash és WooCommerce-hez
 ## Bevezető
 
 A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-el, tehát vásárlást követően a hozzáférést beállíthatod, azonban a termék direkt megjelenítése a kurzus oldalon nehézkes.
-
-Ez az apró Shortcode alapú paraméterezhető bővítmény egy exrta lehetőséget biztos ahhoz, hogy összekösd a terméket és a kurzust, amit a kurzus single oldalán megjeleníthetsz, így a látogató a kurzust a kosárhoz adhatja 
-anélkül, hogy külön elnavigáljon a termék oldalra. A rendszer érzékeli ha a felhasználónak van már hozzáférése a kurzushoz, ilyenkor a kosrához adás gomb már nem jelenik meg. Kezeli ha nincs már készleten, és nem engedélyez csak egy termék hozzáaádását az adott kurzus termékből. A hibaüezenetet a kosár oldalon fogja megjeleníteni ha többször szeretnék hozzáadni. A gomb nem kap letiltást ha már kosárban van. Ha ajax alapon törli  a terméket a kosárból, kell egy page refresh hogy a gomb visszaálljon, de ha időközben ismét lekattintják, ugyan úgy kosárba tudja rakni. (EZ NEM BUG? NEM, EZ FÍCSÖR)
+Ez a bővítmény ezt a szakadékot kívánja betölteni. Megjelenítheted a termékeket direkt módon a kurzusok oldalain, így a felhasználónak nem kell átnavigálnia teljesen feleslegesen a terméklapra. A bővítmény ezen kívül számos beállítást biztosít még. Ezeket mind megtalálod a **WooCommerce -> LearnDash Extras menüpont alatt**
 
 Ha szeretnéd felülírni, hogy ne csak egyet lehessen hozzáadni (bár nincs number input, és a felirat sem fog változni, használhatod a következőt):
 

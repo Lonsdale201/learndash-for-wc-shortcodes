@@ -6,7 +6,8 @@ Apró kiegészítő a Learndash és WooCommerce-hez
 A LearnDash ugyan a hivatalos kiegészítő lévén kompatibilis a WooCommerce-el, tehát vásárlást követően a hozzáférést beállíthatod, azonban a termék direkt megjelenítése a kurzus oldalon nehézkes.
 Ez a bővítmény ezt a szakadékot kívánja betölteni. Megjelenítheted a termékeket direkt módon a kurzusok oldalain, így a felhasználónak nem kell átnavigálnia teljesen feleslegesen a terméklapra. A bővítmény ezen kívül számos beállítást biztosít még. Ezeket mind megtalálod a **WooCommerce -> LearnDash Extras menüpont alatt**
 
-Ha szeretnéd felülírni, hogy ne csak egyet lehessen hozzáadni (bár nincs number input, és a felirat sem fog változni, használhatod a következőt):
+
+Alapvetően a kurzusoknál a termékbl csak egyet kehet hozzáadni, de ha nagyon kell a mennyiségi opció(nem lesz hozzá input sem felirat sem):
 
 `function custom_remove_ld_wc_filter() {
     remove_filter('woocommerce_add_to_cart_validation', 'ld_wc_only_one_course_in_cart', 10);
@@ -28,6 +29,9 @@ Egyéb extra beállításokhoz navigálj a **WooCommerce -** **- LearnDash Extra
 
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)
+
+> [!WARNING]
+> Az **Enable WooCommerce Course menu** funkció bekapcsolását követően, kérlek frissíts rá a közvetlen hivaktozásokra!
 
 ### Tájékoztató
 

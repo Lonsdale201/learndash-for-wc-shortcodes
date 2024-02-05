@@ -3,7 +3,7 @@
 Plugin Name: HelloWP | LearnDash for WooCommerce Extras
 Plugin URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 Description: Speciális kiegészítő ami további kombinációkat biztosít a Learndash és WooCommerce-hez.
-Version: 2.0-beta3
+Version: 2.0
 Author: Soczó Kristóf
 Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 */
@@ -11,6 +11,9 @@ Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 if ( ! defined( 'ABSPATH' ) ) {
     exit; 
 }
+
+require dirname(__FILE__) . '/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5p0\PucFactory;
 
 
 class LD_For_WC {
@@ -26,6 +29,8 @@ class LD_For_WC {
         add_action('manage_sfwd-courses_posts_custom_column', array($this, 'ld_for_wc_show_product_column'), 10, 2);
 
         add_action('admin_init', array($this, 'check_wc_status'));
+
+        add_action('plugins_loaded', array($this, 'init_on_plugins_loaded'));
 
         // new visibility system
         require_once plugin_dir_path(__FILE__) . 'includes/learndash-visibility-manager.php';
@@ -59,6 +64,15 @@ class LD_For_WC {
         $settings_link = '<a href="' . admin_url('admin.php?page=learndash-extras') . '">Beállítások</a>';
         array_unshift($links, $settings_link);
         return $links;
+    }
+
+    public function init_on_plugins_loaded() {
+        // Frissítés ellenőrző inicializálása
+        $myUpdateChecker = PucFactory::buildUpdateChecker(
+            'https://plugin-uodater.alex.hellodevs.dev/plugins/learndash-for-wc-shortcodes-main.json',
+            __FILE__,
+            'learndash-for-wc-shortcodes-main'
+        );
     }
 
     public function ld_wc_enqueue_scripts() {

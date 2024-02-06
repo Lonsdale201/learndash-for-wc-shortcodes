@@ -24,7 +24,10 @@ function ld_wc_display_product_name($atts) {
         'access-text' => '',
         'access-link' => 'false',
         'footer' => '',
-        'outofstock' => 'A kurzus már nem megvásárolható.'
+        'outofstock' => 'A kurzus már nem megvásárolható.',
+        'logged-status' => 'false',
+        'logged-out-text' => '',
+        'logged-redirect' => '',
     );
     
     $atts = shortcode_atts($default_atts, $atts, 'ld_wc_product_name');
@@ -77,13 +80,29 @@ function ld_wc_display_product_name($atts) {
         $output .= ' <span class="extraaccess">De továbbra is van hozzáférésed.</span>';
     }
 
-    $output .= '</div>'; // Close the wc-ld-outofstock div
+    $output .= '</div>'; 
 
-    $output .= '</div>'; // Close the wc-ld-wrapper div
+    $output .= '</div>'; 
     return $output;
 }
 
+// Check if loggedstatus is true and user is not logged in
+if ($atts['logged-status'] == 'true' && !is_user_logged_in()) {
+    // If loggedouttext is not empty, display it as a button
+    if (!empty($atts['logged-out-text'])) {
+        $output = '<div class="wc-ld-loggedout-wrapper">'; 
 
+        $button_text = esc_html($atts['logged-out-text']);
+        if (!empty($atts['logged-redirect'])) {
+            $output .= '<a href="' . esc_url($atts['logged-redirect']) . '" class="button wc-ld-loggedout-button">' . $button_text . '</a>';
+        } else {
+            $output .= '<button class="button wc-ld-loggedout-button">' . $button_text . '</button>';
+        }
+
+        $output .= '</div>'; 
+        return $output;
+    }
+}
 
     // If the image attribute is set to true, get the product image or fallback image
     if ($atts['image'] == 'true') {
@@ -184,7 +203,9 @@ function ld_wc_display_product_name($atts) {
 
         return $output;
 
-        }
+        
+    }
+    
 add_shortcode('ld_wc_product_name', 'ld_wc_display_product_name');
 
 

@@ -1,4 +1,4 @@
-# learndash-for-wc-shortcodes
+# LearnDash for WooCommerce Extras
 Apró kiegészítő a Learndash és WooCommerce-hez
 
 ## Bevezető

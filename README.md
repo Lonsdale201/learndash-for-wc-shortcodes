@@ -193,6 +193,12 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 *  `wc-ld-already-have-access`
 *  `wc-ld-footer-text`
 
+## Roadmap
+
+- [X] Bővímítény updater
+- [ ] Learndash szabály alapú kosárhoz adás megakadályozás (seat limit, pont, és előfeltételek kezelése)
+- [ ] Új Shortcode az előfeltételek megjelenítéséhez
+
 ## Changelog
 
 2024.02.06

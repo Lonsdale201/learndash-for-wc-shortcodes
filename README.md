@@ -63,8 +63,11 @@ Alapértelmezetten megjelenik a termék neve, és a kosárhoz adás gomb. Ha a t
 - **onsuccess-text=""** | Amikor a kosárhoz adod a terméket *(mivel ajax alapú),* kell egy jelzés a felhasználó felé. Ez definiálás nélkül: **Termék a kosárban**, írd át ha mást szeretnél a gomb szövegének megadni.
 - **access-text=""**  | Ha szeretnéd akkor, megjeleníthetsz ebben a shortcode blokkban egy üzenetet, amely az add to cartot helyettesíi, egy jelzéssel, hogy már hozzáférsz a kurzushoz. Nincs alapértelmezett érték.
 - **access-link="false"**     | Ha a shortcode-ot egy loop ba rakod, pl Elementor Loop, akkor hasznos, ha az access szövegre kattintásával átlehet menni maga a tanfolyam oldalra. Alapértelmezetten false.
-- **outofstock=""**   | Ha a termék már nem kapható, akkor megadhatsz egy egyedi szöveget. Ilyen esetben a Shortcode teljes tartalma eltűnik, és csak a paraméter szöveg jelenik meg. Alapértelmezett érték: **A kurzus már nem                           megvásárolható.**
+- **outofstock=""**   | Ha a termék már nem kapható, akkor megadhatsz egy egyedi szöveget. Ilyen esetben a Shortcode teljes tartalma eltűnik, és csak a paraméter szöveg jelenik meg. Alapértelmezett érték: **A kurzus már nem megvásárolható.**
 - **footer=""**  | Lábléc szöveg amely a kosárhoz adás gomb alatt jelenik meg. NIncs alapértelmezett érték, azaz ha nem definiálod semmi nem jelenik meg a "footer-ben".
+- **logged-status=""** | true vagy false érték. Ha true megjelenít egy új gombot ami a nem bejelentkezett felhasználók számára jelenik csak meg. Alapértelmezetten false értékű.
+- **logged-out-text=""** | Itt adhatod meg a nem bejelentkezett felhasználók számára megjelenítendő gomb szövegét.
+- **logged-redirect=""** | Itt adhatod meg a nem bejelentkezett felhasználók számára megjelenítendő gomb linkjét, amire kattintva a felhasználót átirányítja.
   
 Példa Shortcode:
 
@@ -191,7 +194,14 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 *  `wc-ld-footer-text`
 
 ## Changelog
-2024. 02.05
+
+2024.02.06
+v2.1
+
+Új Shortocde attributumok lettek hozzáadva, a [ld_wc_product_name] shortcode-hoz. Mostantól kezelheted azt az esetet, ha a felhasználó nicns bejelentkezve. Így nem az add to cart jelenik meg alapból, hanem egy újabb funkcionális gomb. (pl átirányítás regisztrációs oldalra stb)
+
+2024.02.05 
+v.2
 
 * ÚJ Frissítő szerver bekötve
 

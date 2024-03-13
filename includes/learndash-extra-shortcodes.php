@@ -111,9 +111,14 @@ class LearnDash_extra_Shortcodes {
         }
     
         $price_output = $attributes['label'] ? $attributes['label'] . ' ' : '';
-        $price_output .= wc_price($product->get_price());
+        if ($product->is_on_sale()) {
+            $price_output .= $product->get_sale_price() ? wc_format_sale_price(wc_get_price_to_display($product, array('price' => $product->get_regular_price())), wc_get_price_to_display($product)) : wc_price(wc_get_price_to_display($product));
+        } else {
+            $price_output .= wc_price(wc_get_price_to_display($product));
+        }
         return $price_output;
     }
+    
     
     
 

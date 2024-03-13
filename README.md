@@ -201,6 +201,11 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 
 ## Changelog
 
+2024.03.13.
+V2.1.1
+
+* TWEAK Javítva lett a [ld_extra_product_price] shortcode esetében a megfelelő formátum megjelenítés, ha a termék kedvezményes.
+
 2024.02.06
 v2.1
 

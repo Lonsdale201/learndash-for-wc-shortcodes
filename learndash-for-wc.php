@@ -3,7 +3,7 @@
 Plugin Name: HelloWP | LearnDash for WooCommerce Extras
 Plugin URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 Description: Speciális kiegészítő ami további kombinációkat biztosít a Learndash és WooCommerce-hez.
-Version: 2.1
+Version: 2.1.1
 Author: Soczó Kristóf
 Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 */

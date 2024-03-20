@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: HelloWP | LearnDash for WooCommerce Extras
+Plugin Name: LearnDash for WooCommerce Extras
 Plugin URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
 Description: Speciális kiegészítő ami további kombinációkat biztosít a Learndash és WooCommerce-hez.
-Version: 2.1.1
+Version: 2.1.2
 Author: Soczó Kristóf
-Author URI: https://github.com/Lonsdale201/learndash-for-wc-shortcodes
+Author URI: https://github.com/Lonsdale201?tab=repositories
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,9 +36,13 @@ class LD_For_WC {
         require_once plugin_dir_path(__FILE__) . 'includes/learndash-visibility-manager.php';
         new LearnDash_Visibility_Manager();
 
-         // new menu visibility system
-         require_once plugin_dir_path(__FILE__) . 'includes/learndash-menu-visibility-manager.php';
-         new LearnDash_Menu_Visibility_Manager();
+        // new menu visibility system
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-auto-enroll.php';
+        new LearnDash_Auto_Enroll_System();
+
+         // new visibility system
+        require_once plugin_dir_path(__FILE__) . 'includes/learndash-visibility-manager.php';
+        new LearnDash_Visibility_Manager();
 
         // new settings system
         require_once plugin_dir_path(__FILE__) . 'includes/learndash-for-settings.php';

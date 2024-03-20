@@ -33,6 +33,18 @@ class LearnDash_for_Settings {
         );
 
         add_settings_field(
+            'learndash_courses_select',
+            'Select LearnDash Courses',
+            array($this, 'render_select2_course_field'),
+            'learndash-extras',
+            'learndash_extras_main_section',
+            array(
+                'label_for' => 'learndash_courses_select',
+                'name' => 'learndash_courses_select',
+            )
+        );
+
+        add_settings_field(
             'enable_elementor_visibility',
             'Enable Elementor Visibility',
             array($this, 'render_checkbox_field'),
@@ -233,8 +245,38 @@ class LearnDash_for_Settings {
         echo '<p class="description">Use the <code>{fiokom}</code> smartlink to provide a link to the course menu item you have created on my woocomerce account page (if you have enabled it)</p>';
     }
     
+    public function render_select2_course_field($args) {
+        wp_enqueue_script('wc-enhanced-select');
+        wp_enqueue_style('woocommerce_admin_styles');
     
-
+        $options = get_option('learndash_extras_settings');
+        $selected_courses = $options[$args['name']] ?? [];
+        $courses = get_posts([
+            'post_type' => 'sfwd-courses', 
+            'numberposts' => -1,
+            'post_status' => 'publish' 
+        ]);
+        
+        echo '<p>Select the courses where the user is automatically enrolled after registration.</p>';
+        
+        echo '<select class="wc-enhanced-select" id="' . $args['label_for'] . '" name="learndash_extras_settings[' . $args['name'] . '][]" multiple="multiple" data-placeholder="Choose Courses" style="width:50%;">';
+        foreach ($courses as $course) {
+            $selected = in_array($course->ID, $selected_courses) ? 'selected' : '';
+            echo '<option value="' . $course->ID . '" ' . $selected . '>' . $course->post_title . '</option>';
+        }
+        echo '</select>';
+    
+        echo '<script>
+            jQuery(document).ready(function($) { 
+                $("#' . $args['label_for'] . '").select2({
+                    placeholder: "Choose Courses",
+                    allowClear: true
+                }); 
+            });
+        </script>';
+    }
+    
+    
     public function render_settings_page() {
         ?>
         <div class="wrap">

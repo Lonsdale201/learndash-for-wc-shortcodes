@@ -200,6 +200,10 @@ CSS segítségével bármit formázhatsz a Shortcode-on belül, és a flexnek k�
 - [ ] Új Shortcode az előfeltételek megjelenítéséhez
 
 ## Changelog
+2024.03.20
+V2.1.2
+
+* ÚJ beállítás, amit megtalálsz a bővítmény beállításai oldalán. Az új beállításban megadhatsz egy vagy több olyan kurzust, amire a felhasználót automatikusan beiratkoztatja a rendszer, amikor regisztrál a weboldalra. Standard *user_register* akció használatával.
 
 2024.03.13.
 V2.1.1

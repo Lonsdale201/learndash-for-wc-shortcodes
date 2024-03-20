@@ -24,8 +24,8 @@ Egyéb extra beállításokhoz navigálj a **WooCommerce -** **- LearnDash Extra
 **Tesztelve:**
 
 * PHP 8.1
-* WooCommerce: 8.5.1
-* LearnDash: 4.10.3
+* WooCommerce: 8.7.0
+* LearnDash: 4.12.0
 
 > [!IMPORTANT]
 > Ez a bővítmény nem kompatibilis a WPML vagy egyéb fordító bővítményekkel...Még :)

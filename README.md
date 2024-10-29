@@ -87,7 +87,7 @@ Kurzus single oldalon használható kódok és attributumok:
 * **empty** -> ha az érték üres, vagy 0, és az empty false ra állítod, nem jelent meg semmit. Ha true, akkor is megjeleníti ha az érték üres, vagy nulla. (leckék esetében az empty paraméter nincs definiálva)
 
 > [!IMPORTANT]
-> Elementor Pro-t használsz? Van egy sokkal jobb, és újabb bővítményünk amivel több mint 20 féle adatot jeleníthetsz meg az Elementor -  Dinamikus címkéi segítségével (Dynamic tags), így a legtöbb kurzus adatot bármilyen widgetben megjelenítheted, és kompromisszumok nélkül készítheted el a kurzusod oldalát. Új bővítmény: https://github.com/Lonsdale201/Dynamic-Learndash-for-Elementor
+> Elementor Pro-t használsz? Van egy sokkal jobb, és újabb bővítményünk amivel több mint 20 féle adatot jeleníthetsz meg az Elementor -  Dinamikus címkéi segítségével (Dynamic tags), így a legtöbb kurzus adatot bármilyen widgetben megjelenítheted, és kompromisszumok nélkül készítheted el a kurzusod oldalát. Új bővítmény: [https://github.com/Lonsdale201/Dynamic-Learndash-for-Elementor](https://github.com/Lonsdale201/dynamic-elementor-extension)
 
 
 **Példák:**

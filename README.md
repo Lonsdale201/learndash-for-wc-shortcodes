@@ -1,4 +1,4 @@
-# LearnDash for WooCommerce Extras (deprecated)
+# LearnDash for WooCommerce Extras 
 Apró kiegészítő a Learndash és WooCommerce-hez
 
 ## Bevezető
